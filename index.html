@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Income Tax Calculator - FY 2025–2026</h1>
+    <div class="tabs">
+      <button class="tab active" onclick="showTab(0)">Basic details</button>
+      <button class="tab" onclick="showTab(1)">Income details</button>
+      <button class="tab" onclick="showTab(2)">Deduction</button>
+    </div>
+
+    <form id="tax-form">
+      <!-- Basic Details Tab -->
+      <div class="tab-content" id="basic">
+        <label>Tax Regime:
+          <select id="regime">
+            <option value="new">New Regime</option>
+            <option value="old">Old Regime</option>
+          </select>
+        </label>
+        <label>Age:
+          <select id="age">
+            <option value="<60">Below 60</option>
+            <option value="60-80">60 to 80</option>
+            <option value=">80">Above 80</option>
+          </select>
+        </label>
+        <div class="button-group">
+          <button type="button" onclick="showTab(1)">Continue</button>
+        </div>
+      </div>
+
+      <!-- Income Details Tab -->
+      <div class="tab-content hidden" id="income">
+        <div class="grid">
+          <label>Income from Salary: <input type="number" id="salary"></label>
+          <label>Income from Interest: <input type="number" id="interest"></label>
+          <label>Rental Income Received: <input type="number" id="rental"></label>
+          <label>Income from Digital Assets: <input type="number" id="digital"></label>
+          <label>Exempt Allowances: <input type="number" id="exempt"></label>
+          <label>Interest on Home Loan - Self Occupied: <input type="number" id="homeLoanSelf"></label>
+          <label>Interest on Home Loan - Let Out: <input type="number" id="homeLoanLet"></label>
+          <label>Other Income: <input type="number" id="otherIncome"></label>
+        </div>
+        <div class="button-group">
+          <button type="button" onclick="showTab(0)">Back</button>
+          <button type="button" onclick="showTab(2)">Continue</button>
+        </div>
+      </div>
+
+      <!-- Deductions Tab -->
+      <div class="tab-content hidden" id="deductions">
+        <div class="grid">
+          <label>Basic Deductions - 80C: <input type="number" id="ded80c"></label>
+          <label>Medical Insurance - 80D: <input type="number" id="ded80d"></label>
+          <label>Interest on Housing Loan - 80EEA: <input type="number" id="ded80eea"></label>
+          <label>Employer’s NPS - 80CCD(2): <input type="number" id="ded80ccd2"></label>
+          <label>Interest from Deposits - 80TTA: <input type="number" id="ded80tta"></label>
+          <label>Donations to Charity - 80G: <input type="number" id="ded80g"></label>
+          <label>Employee’s NPS - 80CCD: <input type="number" id="ded80ccd"></label>
+          <label>Any Other Deduction: <input type="number" id="dedOther"></label>
+        </div>
+        <div class="button-group">
+          <button type="button" onclick="showTab(1)">Back</button>
+          <button type="submit">Calculate</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
