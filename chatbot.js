@@ -1,11 +1,4 @@
 const API_KEY = "AIzaSyDglgSs3KlKslFtkf2uzMOk_nf0Bn-z2co";
-// function toggleChat() {
-//   const chat = document.getElementById("chat-container");
-//   chat.classList.toggle("hidden");
-// }
-// document.getElementById("chat-window").addEventListener("click", (event) => {
-//   event.stopPropagation(); // prevent icon toggler from being triggered
-// });
 function toggleChat() {
   const chat = document.getElementById("chat-container");
   chat.classList.toggle("hidden");
@@ -91,13 +84,6 @@ async function sendMessage() {
     chatBox.innerHTML += `<div class="bot-message">An error occurred. Please try again.</div>`;
   }
 }
-// window.addEventListener("click", function (e) {
-//     const chat = document.getElementById("chat-container");
-//     const icon = document.getElementById("chatbot-icon");
-//     if (!chat.contains(e.target) && !icon.contains(e.target)) {
-//       chat.classList.add("hidden");
-//     }
-//   });
 const chatIcon = document.getElementById("chatbot-icon");
 chatIcon.addEventListener("click", (event) => {
   event.stopPropagation(); // Prevent bubbling
