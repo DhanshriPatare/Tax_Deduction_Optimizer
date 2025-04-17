@@ -1,8 +1,10 @@
 **💼 SaveMyTax**
+
     SaveMyTax is an intelligent tax planning and calculation tool built to assist Indian taxpayers in choosing the right regime, maximizing deductions, and making smarter financial decisions. Powered by core data structures and a clean, intuitive interface, it delivers accurate results, smart suggestions, and insightful visuals — all in one place.
 
 
 **🔧 Features**
+
     🔢 Income Tax Calculator
         Calculate your tax liability accurately based on income, age group, and selected regime.
 
@@ -26,6 +28,7 @@
 
 
 **⚙️ Tech Stack & Data Structures**
+
     🖥️ Frontend
         HTML, CSS, JavaScript — Core structure, styling, and interactivity
         DOM Manipulation — For dynamic UI updates and data handling
