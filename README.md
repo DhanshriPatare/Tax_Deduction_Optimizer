@@ -1,6 +1,10 @@
 **💼 SaveMyTax**
 
-    SaveMyTax is an intelligent tax planning and calculation tool built to assist Indian taxpayers in choosing the right regime, maximizing deductions, and making smarter financial decisions. Powered by core data structures and a clean, intuitive interface, it delivers accurate results, smart suggestions, and insightful visuals — all in one place.
+    SaveMyTax is an intelligent tax planning and calculation tool built to assist
+     Indian taxpayers in choosing the right regime, maximizing deductions, and 
+     making smarter financial decisions. Powered by core data structures and 
+     a clean, intuitive interface, it delivers accurate results, 
+     smart suggestions, and insightful visuals — all in one place.
 
 
 **🔧 Features**
@@ -12,7 +16,8 @@
         Automatically compares tax under both regimes and suggests the more beneficial option.
 
     📈 Visual Tax Comparison & Smart Suggestions
-        Displays a side-by-side visual of both regimes and recommends optimal deductions using a priority queue to maximize savings.
+        Displays a side-by-side visual of both regimes and recommends optimal 
+        deductions using a priority queue to maximize savings.
 
     🧠 Smart Tax Planner
         Suggests structured tax-saving strategies based on user inputs and deduction limits.
