@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SaveMyTax - Home</title>
+    <link rel="stylesheet" href="/new.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome To SaveMyTax!</h1>
+      <p>
+        Your all-in-one tax saving companion. Calculate, plan, and optimize your
+        taxes with ease!
+      </p>
+    </header>
+    <div class="sidebar-title">Explore Our Features</div>
+    <section class="features">
+      <div class="card">
+        <h3>💰 Income Tax Calculator</h3>
+        <p>
+          Compare old vs. new tax regimes and calculate total tax based on
+          income and deductions.
+        </p>
+        <a href="/index.html">Try Now</a>
+      </div>
+      <div class="card">
+        <h3>📚 Tax Sections Info</h3>
+        <p>
+          Understand all available tax-saving sections and how they benefit you.
+        </p>
+        <a href="/info.html">Explore</a>
+      </div>
+
+      <div class="card">
+        <h3>📊 Section Comparison</h3>
+        <p>
+          Visual comparison of two sections using graphs and data structures.
+        </p>
+        <a href="/chart.html">Compare</a>
+      </div>
+      <div class="card">
+        <h3>📈 Tax Goal Planner</h3>
+        <p>
+          Plan your savings and deductions smartly using our tax optimization
+          graph.
+        </p>
+        <a href="/tax_saving.html">Plan Now</a>
+      </div>
+      <div class="card">
+        <h3>ℹ️ About Us</h3>
+        <p>Curious about us? Know more about SaveMyTax.</p>
+        <a href="/aboutUs.html">Chat Now</a>
+      </div>
+      <div class="card">
+        <h3>❓ Frequently Asked Questions</h3>
+        <p>Curious about us? Know more about SaveMyTax.</p>
+        <a href="/faq.html">Chat Now</a>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2>What Our Users Say</h2>
+      <p class="review">
+        "SaveMyTax made tax filing stress-free and even helped me save more than
+        expected!" - Anjali P.
+      </p>
+      <p class="review">
+        "Absolutely love the AI chatbot! It answered all my doubts clearly and
+        quickly." - Rohan M.
+      </p>
+
+    <section class="newsletter">
+      <h2>Subscribe for Updates</h2>
+      <p>
+        Stay updated with the latest tax-saving tips and government
+        announcements.
+      </p>
+      <form onsubmit="subscribe(event)">
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+    <!-- Floating Icon -->
+    <div id="chatbot-icon" onclick="toggleChat()">💬</div>
+    <!-- Chat Container -->
+    <div id="chat-container" class="hidden">
+      <div id="chat-header">Tax Assist</div>
+      <div id="chat-box">
+        <div id="suggestions" class="suggestion-container">
+          <p>Try asking about:</p>
+          <button
+            class="suggestion-btn"
+            onclick="sendSuggestion('Can you explain the latest changes in Section 80C for FY 2024-25?')"
+          >
+            📜 Changed rules of 80C?
+          </button>
+          <button
+            class="suggestion-btn"
+            onclick="sendSuggestion('Tell me the basics of stock market')"
+          >
+            📰 More about stocks
+          </button>
+          <button
+            class="suggestion-btn"
+            onclick="sendSuggestion('How does investing in SIP help in tax saving?')"
+          >
+            💸 Invest in mutual fund SIP?
+          </button>
+          <button
+            class="suggestion-btn"
+            onclick="sendSuggestion('How can I save more tax this year?')"
+          >
+            💡 Tax Saving Tips
+          </button>
+        </div>
+      </div>
+      <div id="chat-input-area">
+        <input type="text" id="user-input" placeholder="Ask something..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <script src="/c.js"></script>
+    <footer>&copy; 2025 SaveMyTax. All rights reserved.</footer>
+
+    <script>
+      function subscribe(event) {
+        event.preventDefault();
+        const email = document.getElementById("email").value;
+        if (email) {
+          alert(`Thanks for subscribing, ${email}! We'll keep you posted.`);
+          document.getElementById("email").value = "";
+        }
+      }
+
+      function toggleAnswer(id) {
+        const answerDiv = document.getElementById("answer" + id);
+        answerDiv.style.display =
+          answerDiv.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>
