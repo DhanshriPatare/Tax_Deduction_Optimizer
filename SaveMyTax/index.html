@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Income Tax Calculator</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/SaveMyTax/style.css" />
     <style>
       .output-wrapper {
         margin: 40px auto;
@@ -18,6 +18,7 @@
         gap: 30px;
         font-family: "Poppins", sans-serif;
       }
+
       .summary {
         font-size: 20px;
         font-weight: 600;
@@ -68,33 +69,90 @@
       .suggestions strong {
         color: #007b7f;
       }
-      .back-button {
-        position: absolute;
-        top: 20px;
-        left: 30px;
-        background-color: #ffffff;
-        color: #216069;
-        border: 2px solid #10616e;
-        border-radius: 8px;
-        padding: 8px 14px;
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s ease;
-        z-index: 999;
+
+      /* Sidebar styles */
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 240px;
+        background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
+        padding: 30px 20px;
+        font-family: "Poppins", sans-serif;
+        z-index: 1000;
       }
 
-      .back-button:hover {
-        background-color: #247681;
-        color: #fff;
+      .sidebar-title {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #00796b;
+        border-bottom: 2px solid #4db6ac;
+        padding-bottom: 10px;
+      }
+
+      .sidebar-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar-menu li {
+        margin-bottom: 18px;
+      }
+
+      .sidebar-menu a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #00695c;
+        background: #e0f2f1;
+        padding: 10px 14px;
+        border-radius: 10px;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      .sidebar-menu a:hover {
+        background-color: #b2dfdb;
+        color: #004d40;
+        transform: translateX(5px);
       }
     </style>
   </head>
   <body>
-    <button class="back-button" onclick="location.href='home.html'">
-      ⬅ Back to Home
-    </button>
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+      <div class="sidebar-title">Explore More</div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="/SaveMyTax/info.html" target="_blank"
+            >📘 Info about Sections</a
+          >
+        </li>
+        <li>
+          <a href="/SaveMyTax/tax_saving.html" target="_blank"
+            >💡 Smart Tax Planning Suggestions</a
+          >
+        </li>
+        <li>
+          <a href="/SaveMyTax/chart.html" target="_blank"
+            >📊 Statistical Comparison of Tax Sections</a
+          >
+        </li>
+        <li>
+          <a href="/SaveMyTax/aboutUs.html" target="_blank"> About Us</a>
+        </li>
+        <li>
+          <a href="/SaveMyTax/faq.html" target="_blank">FAQs</a>
+        </li>
+      </ul>
+    </div>
+
     <div class="container">
+      <h1>Welcome To SaveMyTax!</h1>
       <h1>Income Tax Calculator - FY 2025–2026</h1>
       <div class="tabs">
         <button class="tab active" onclick="showTab(0)">Basic details</button>
@@ -211,9 +269,52 @@
       <button id="export-pdf" class="button">Export Result as PDF</button>
     </div>
 
+    <!-- Floating Icon -->
+    <div id="chatbot-icon" onclick="toggleChat()">💬</div>
+
+    <!-- Chat Container -->
+    <div id="chat-container" class="hidden">
+      <div id="chat-header">Tax Assist</div>
+      <div id="chat-box">
+        <div id="suggestions" class="suggestion-container">
+          <p>Try asking about:</p>
+          <button
+            class="suggestion-btn"
+            onclick="sendSuggestion('Can you explain the latest changes in Section 80C for FY 2024-25?')"
+          >
+            📜 Changed rules of 80C?
+          </button>
+          <button
+            class="suggestion-btn"
+            onclick="sendSuggestion('Tell me the basics of stock market')"
+          >
+            📰 More about stocks
+          </button>
+          <button
+            class="suggestion-btn"
+            onclick="sendSuggestion('How does investing in SIP help in tax saving?')"
+          >
+            💸 Invest in mutual fund SIP?
+          </button>
+          <button
+            class="suggestion-btn"
+            onclick="sendSuggestion('How can I save more tax this year?')"
+          >
+            💡 Tax Saving Tips
+          </button>
+        </div>
+      </div>
+      <div id="chat-input-area">
+        <input type="text" id="user-input" placeholder="Ask something..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <script src="/SaveMyTax/c.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/script.js"></script>
+    <script src="/SaveMyTax/script.js"></script>
   </body>
 </html>
