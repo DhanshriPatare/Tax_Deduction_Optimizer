@@ -87,10 +87,33 @@
         margin-top: 20px;
         color: #999;
       }
+      .back-button {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        background-color: #ffffff;
+        color: #216069;
+        border: 2px solid #10616e;
+        border-radius: 8px;
+        padding: 8px 14px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease;
+        z-index: 999;
+      }
+
+      .back-button:hover {
+        background-color: #247681;
+        color: #fff;
+      }
     </style>
   </head>
   <body>
-    <h2>Tax Saving Dependency Graph View</h2>
+    <button class="back-button" onclick="location.href='home.html'">
+      ⬅ Back to Home
+    </button>
+    <h2>💡 Tax Saving Dependency View</h2>
     <div class="graph-container" id="graphView"></div>
     <div class="footer">💡 Modeled using Adjacency List (JS Object)</div>
 
